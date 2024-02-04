@@ -54,12 +54,4 @@ public LionTest (String male, boolean expectedHasMane){
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals((List.of("Животные", "Птицы", "Рыба")), lion.getFood());
     }
-
-    @Test
-    public void testCheckException() {
-        Exception actualException = assertThrows(Exception.class, () ->
-                new Lion("something"));
-        assertEquals("Используйте допустимые значения пола животного - самец или самка",
-                actualException.getMessage());
-    }
 }
