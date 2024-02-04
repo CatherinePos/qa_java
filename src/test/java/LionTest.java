@@ -37,20 +37,20 @@ public LionTest (String male, boolean expectedHasMane){
 
     @Test
     public void testGetKittens() throws Exception {
-        Lion lion = new Lion(male);
-        Mockito.when(feline.getKittens()).thenReturn(3);
+        Lion lion = new Lion(male, feline);
+        Mockito.when(feline.getKittens()).thenReturn(1);
         assertEquals(1, lion.getKittens());
     }
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        Lion lion = new Lion(male);
+        Lion lion = new Lion(male, feline);
         assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 
     @Test
     public void testGetFood() throws Exception {
-        Lion lion = new Lion(male);
+        Lion lion = new Lion(male, feline);
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals((List.of("Животные", "Птицы", "Рыба")), lion.getFood());
     }

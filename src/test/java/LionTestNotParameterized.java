@@ -4,11 +4,11 @@ package com.example;
         import static org.junit.Assert.assertThrows;
 
 public class LionTestNotParameterized {
-
+    Feline feline;
     @Test
     public void testCheckException() {
         Exception actualException = assertThrows(Exception.class, () ->
-                new Lion("something"));
+                new Lion("something", feline));
         assertEquals("Используйте допустимые значения пола животного - самец или самка",
                 actualException.getMessage());
     }
